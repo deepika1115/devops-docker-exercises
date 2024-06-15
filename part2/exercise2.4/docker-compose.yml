@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  cache:
+    image: redis:7.2-alpine
+    ports:
+      - '6379:6379'
+      
+  example-frontend:
+    build:
+      context: ./example-frontend
+      args:
+        - REACT_APP_BACKEND_URL=http://localhost:8080
+    container_name: frontend-app
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:8080
+    ports:
+      - 5000:5000
+  
+  example-backend:
+    build: ./example-backend
+    container_name: backend-app
+    environment:
+      - PORT=8080
+      - REQUEST_ORIGIN=http://localhost:5000
+      - REDIS_HOST=cache
+    ports:
+      - 8080:8080

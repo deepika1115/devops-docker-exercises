@@ -1,0 +1,5 @@
+# To build the image
+$ docker build -t backend-example .
+
+# To run the container
+$ docker run -p 8080:8080 backend-example 

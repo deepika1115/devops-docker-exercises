@@ -1,0 +1,11 @@
+# The link to the project in Docker Hub:
+
+https://hub.docker.com/r/deepika1115/react-bg-changer-app
+
+# Docker pull command for this image is:
+
+$ docker pull deepika1115/react-bg-changer-app
+
+# To run the Docker container from this image, use the following command:
+
+$ docker run -p 5173:5173 deepika1115/react-bg-changer-app:tagname

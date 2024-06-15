@@ -1,0 +1,13 @@
+# To build the backend image
+$ docker build -t backend-example .
+
+# To run the backend container
+$ docker run -p 8080:8080 backend-example 
+
+# To build the frontend image:
+$ docker build -t frontend-example .
+
+# To run the frontend container:
+$ docker run -p 5000:5000 frontend-example
+
+
